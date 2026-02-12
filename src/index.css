@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 80 25% 97%;
+    --foreground: 150 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 145 45% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 30% 88%;
+    --secondary-foreground: 35 40% 20%;
+
+    --muted: 80 15% 92%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 42 80% 50%;
+    --accent-foreground: 42 90% 12%;
+
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 80 15% 85%;
+    --input: 80 15% 85%;
+    --ring: 145 45% 28%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 145 35% 18%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 42 80% 50%;
+    --sidebar-primary-foreground: 42 90% 12%;
+    --sidebar-accent: 145 30% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 145 25% 28%;
+    --sidebar-ring: 42 80% 50%;
+
+    --success: 145 50% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 42 90% 50%;
+    --warning-foreground: 42 90% 12%;
+    --info: 200 60% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 80 10% 92%;
+    --card: 150 20% 12%;
+    --card-foreground: 80 10% 92%;
+    --popover: 150 20% 12%;
+    --popover-foreground: 80 10% 92%;
+    --primary: 145 45% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 20% 20%;
+    --secondary-foreground: 35 20% 85%;
+    --muted: 150 15% 18%;
+    --muted-foreground: 80 10% 60%;
+    --accent: 42 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 15% 22%;
+    --input: 150 15% 22%;
+    --ring: 145 45% 40%;
+    --sidebar-background: 150 25% 8%;
+    --sidebar-foreground: 80 10% 92%;
+    --sidebar-primary: 42 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 20% 15%;
+    --sidebar-accent-foreground: 80 10% 92%;
+    --sidebar-border: 150 15% 18%;
+    --sidebar-ring: 42 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      hsl(145 45% 28% / 0.85) 0%,
+      hsl(145 35% 18% / 0.75) 50%,
+      hsl(42 80% 50% / 0.3) 100%
+    );
+  }
+
+  .stat-card {
+    @apply bg-card rounded-lg border p-6 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .govt-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium;
+  }
+
+  .govt-badge-pending {
+    @apply govt-badge;
+    background: hsl(var(--warning) / 0.15);
+    color: hsl(var(--warning));
+  }
+
+  .govt-badge-approved {
+    @apply govt-badge;
+    background: hsl(var(--success) / 0.15);
+    color: hsl(var(--success));
+  }
+
+  .govt-badge-rejected {
+    @apply govt-badge;
+    background: hsl(var(--destructive) / 0.15);
+    color: hsl(var(--destructive));
+  }
+}
