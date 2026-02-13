@@ -12,6 +12,7 @@ import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import FarmerDashboard from "./pages/FarmerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/admin-login" element={<AdminLogin />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
